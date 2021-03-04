@@ -1,0 +1,102 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {},
+    ".NETCoreApp,Version=v5.0/win7-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v5.0": [
+      "BouncyCastle >= 1.8.9",
+      "Newtonsoft.Json >= 12.0.3"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Supipi\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\prover.csproj",
+      "projectName": "prover",
+      "projectPath": "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\prover.csproj",
+      "packagesPath": "C:\\Users\\Supipi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Supipi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "frameworks": {
+        "net5.0": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "dependencies": {
+          "BouncyCastle": {
+            "target": "Package",
+            "version": "[1.8.9, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'BouncyCastle (>= 1.8.9)' for '.NETCoreApp,Version=v5.0'.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Newtonsoft.Json (>= 12.0.3)' for '.NETCoreApp,Version=v5.0'.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'BouncyCastle (>= 1.8.9)' for '.NETCoreApp,Version=v5.0/win7-x86'.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v5.0/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Newtonsoft.Json (>= 12.0.3)' for '.NETCoreApp,Version=v5.0/win7-x86'.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v5.0/win7-x86"
+      ]
+    }
+  ]
+}

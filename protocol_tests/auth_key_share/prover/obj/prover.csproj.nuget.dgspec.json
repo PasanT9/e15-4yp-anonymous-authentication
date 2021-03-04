@@ -1,0 +1,55 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\prover.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\prover.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\prover.csproj",
+        "projectName": "prover",
+        "projectPath": "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\prover.csproj",
+        "packagesPath": "C:\\Users\\Supipi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Supipi\\Desktop\\decentralized_e2e_tunnel\\test\\prover\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Supipi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "frameworks": {
+          "net5.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "dependencies": {
+            "BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
