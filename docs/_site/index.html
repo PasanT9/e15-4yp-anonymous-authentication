@@ -360,19 +360,26 @@
             positive integers such that $(a_1, a_2, .., a_{t-1})$. Then set $a_0$ to the secret we want to share. These points are used to generate 
             the polynomial f(x). </p>
 
-         f(x) = a_0 + a_1x +a_2x^2 + ... + a_{t-1}x^{t-1} \]
+         <p> f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>(t-1)</sub>x<sup>(t-1)</sup>
 
-Then we get n points $(x_i, y_i)$ corresponding to the polynomial. Given any subset of t points $a_0$ can be found by lagrange basis interpolation. 
+         <p> Then we get n points $(x_i, y_i)$ corresponding to the polynomial. Given any subset of t points $a_0$ can be found by lagrange basis 
+             interpolation.</p> 
 
-\[ l_i = \frac{x - x_0}{x_i-x_0} \times \frac{x - x_1}{x_i-x_1} \times ... \times \frac{x - x_{t-1}}{x_i-x_{t-1}}\]
+        
+         \[ l_i = \frac{x - x_0}{x_i-x_0} \times \frac{x - x_1}{x_i-x_1} \times ... \times \frac{x - x_{t-1}}{x_i-x_{t-1}}\]
 
-\[ f(x) = \sum_{i=0}^{t-1} y_il_i(x)) \]
+         \[ f(x) = \sum_{i=0}^{t-1} y_il_i(x)) \]
+        
 
-The idea of Shamir's secret sharing is a popular concept in p2p systems. A p2p network does not have an centralized database to store peers' keys. Storing keys in a selected set of peers might not be a good idea since p2p is a semi-trusted environment. For an example when a peer request a key from another peer, he might not respond. Therefore keys need to be broken into parts and distributed among multiple peers. A peer  should be able to reconstruct a key without the knowledge of all the parts. \cite{Xiaoliang}, \cite{Sun} are p2p anonymous authentication mechanisms that use the concept of Shamir's secret sharing.\\
+        <p> The idea of Shamir's secret sharing is a popular concept in p2p systems. A p2p network does not have an centralized database to store 
+            peers' keys. Storing keys in a selected set of peers might not be a good idea since p2p is a semi-trusted environment. For an example 
+            when a peer request a key from another peer, he might not respond. Therefore keys need to be broken into parts and distributed among 
+            multiple peers. A peer  should be able to reconstruct a key without the knowledge of all the parts. \cite{Xiaoliang}, \cite{Sun} 
+            are p2p anonymous authentication mechanisms that use the concept of Shamir's secret sharing.</p>
 
  
 
-\section{Conceptual design}
+        <h3>Conceptual design </h3>
 
 \subsection{P2P network design}
 
