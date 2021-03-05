@@ -206,19 +206,19 @@
         We deploy these protocol in a P2P environment where certificates are managed by peers with elevated 
         privileges (super peers). To solve the problems of semi-trusted nature and unpredictable availability 
         of peers we utilize Shamir's secret sharing\cite{Adi} technique. A more detailed explanation of these 
-        cryptographic primitives is given in section \rom{3}. Then we test the performance of these ideas in 
+        cryptographic primitives is given in section 3. Then we test the performance of these ideas in 
         a practical environment developed using the .Net framework.
         
         <h2> Deliverable and milestones </h2>
 
         <h2> Outline of the report </h2>
 
-        <p>The organization of the paper as follows. In section \rom{2} we present related works in authentication 
-           in P2P and anonymous authentication in P2P. Section \rom{3} gives a brief introduction to cryptographic 
-           primitives that we used. In section \rom{4} we present the implementation design of the P2P environment 
-           including certificate management. Section \rom{5} introduce the proposed authentication protocols including 
+        <p>The organization of the paper as follows. In section 2 we present related works in authentication 
+           in P2P and anonymous authentication in P2P. Section 3 gives a brief introduction to cryptographic 
+           primitives that we used. In section 4 we present the implementation design of the P2P environment 
+           including certificate management. Section 5 introduce the proposed authentication protocols including 
            security proofs for the two latter protocols. We review the experimental results and do a performance analysis 
-           in section \rom{6}. Section \rom{7} conclude our research.  
+           in section 6. Section 7 conclude our research.  
         </p>
         
         
@@ -265,7 +265,7 @@
             of malicious CAs, MITM attacks and single point of failure. Blockchain is used as a distributed key-value data storage. 
             The data is public and readable to everyone.\cite{Sivakumar2017}  propose the idea of using smart contracts to certificate management. 
         </p>
-        <p> The DPKI is only secure as long as honest nodes control collectively more than 51\% of computing power. Also some argues the need 
+        <p> The DPKI is only secure as long as honest nodes control collectively more than 51&percnt;of computing power. Also some argues the need 
             of blockchain to decentralized PKI since the technology of blockchain is still new to the industry.
         </p>
         <p> The PGP Web of Trust \cite{Bob2005ThePT} is another way to navigate the problem of not having a trusted central authority. 
@@ -347,30 +347,33 @@
             linkable ring signatures\cite{Liu}, revocable ring signatures\cite{Dennis}, traceable ring signatures\cite{Fujisaki}.</p> 
 
         <p> Consider a scenario where a group of k entities where each entity has a public key Pi and a corresponding secret key Si. An entity r 
-            can generate a ring signature on a message m using $(m, P_1, …, P_k, S_r)$. Anyone with the knowledge of $m, P_1, …, P_k$ can verify the ring 
-            signature. No one outside the group (without a secret key $S_i$) can generate a valid ring signature for the same group.</p>
+            can generate a ring signature on a message m using <math>(m, P<sub>1</sub>, …, P<sub>k</sub>, S<sub>r</sub>)</math>. Anyone with the knowledge of 
+            <math>m, P<sub>1</sub>, …, P<sub>k</sub></math> can verify the ring signature. No one outside the group (without a secret key <math>S<sub>i</sub></math>) 
+            can generate a valid ring signature for the same group.</p>
 
         <h4> Shamir's Secret Sharing </h4>
 
         <p> In 1979 Adi Shamir introduced the concept of Shamir's secret sharing\cite{Adi}[How to Share a Secret]. This allows a secret to be divided 
-            into n parts. The secret can be reconstructed with atleast t parts where $(1 \leq t \leq n)$. No knowledge about the secret can be learnt 
+            into n parts. The secret can be reconstructed with atleast t parts where <math>(1 &le; t &le; n)</math>. No knowledge about the secret can be learnt 
             with (t-1) parts.</p>
 
         <p> The concept is based on polynomial interpolation. The idea is to generate a polynomial f(x) of (t-1) points. First we select (t-1) random 
-            positive integers such that $(a_1, a_2, .., a_{t-1})$. Then set $a_0$ to the secret we want to share. These points are used to generate 
-            the polynomial f(x). </p>
+            positive integers such that <math>(a<sub>1</sub>, a<sub>2</sub>, .., a<sub>t-1</sub>)</math>. Then set $a_0$ to the secret we want to share. These 
+            points are used to generate the polynomial f(x). </p>
 
-        <p> f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>(t-1)</sub>x<sup>(t-1)</sup>
+        <p> <math> f(x) = a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + ... + a<sub>(t-1)</sub>x<sup>(t-1)</sup></math>
 
-        <p> Then we get n points $(x_i, y_i)$ corresponding to the polynomial. Given any subset of t points $a_0$ can be found by lagrange basis 
-            interpolation.</p> 
+        <p> Then we get n points <math>(x<sub>i</sub>, y<sub>i</sub>)</math> corresponding to the polynomial. Given any subset of t points <math>a<sub>0</sub></math> 
+            can be found by lagrange basis interpolation.</p> 
 
         
         
         
         
         
-         \[ l_i = \frac{x - x_0}{x_i-x_0} \times \frac{x - x_1}{x_i-x_1} \times ... \times \frac{x - x_{t-1}}{x_i-x_{t-1}}\]
+         <math> l<sub>i</sub> = <box>(x - x<sub>0</sub>)<over>(x<sub>i</sub>-x<sub>0</sub>) </box> &times; 
+                                <box>(x - x<sub>1</sub>)<over>(x<sub>i</sub>-x<sub>1</sub>) &times; ... &times; 
+                                <box>(x - x<sub>t-1</sub>)<over>(x<sub>i</sub>-x<sub>t-1</sub>) </math>
 
          \[ f(x) = \sum_{i=0}^{t-1} y_il_i(x)) \]
         
@@ -768,79 +771,88 @@
         <p> If the prover indeed has a secret key corresponding to any one of the public keys in set P, prover can successfully decrypt X. Therefore can obtain 
             the correct key (k) for step 5. </p>
 
-<p> \[ K^/ = X^y \] </p>
-<p> \[ K^/ = (g^x)^y \] </p>
-<p> \[ K^/ = (g^y)^x\] </p>
-<p> \[ K^/ = K \] <p>bt5464656
+        <p> \[ K^/ = X^y \] </p>
+        <p> \[ K^/ = (g^x)^y \] </p>
+        <p> \[ K^/ = (g^y)^x\] </p>
+        <p> \[ K^/ = K \] </p>
 
-Since prover generate the correct key (K). He can successfully decrypt R. Therefore can successfully authenticate himself. 
+        <p> Since prover generate the correct key (K). He can successfully decrypt R. Therefore can successfully authenticate himself. </p>
 
-    \subsubsection{Soundness}
+        <h5> Soundness </h5>
 
-A cheating prover does not have a secret key corresponding to any of the public keys in P. To authenticate himself as a member he has to correctly guess X at step 3 or correctly guess R at step 5. Both it is statistically impossible since X and R are generated randomly by the verifier for each communication session. 
+        <p> A cheating prover does not have a secret key corresponding to any of the public keys in P. To authenticate himself as a member he has to correctly 
+            guess X at step 3 or correctly guess R at step 5. Both it is statistically impossible since X and R are generated randomly by the verifier for 
+            each communication session. </p>
 
-Therefore unless prover can obtain a secret key and a corresponding public key from a another registered user, it is not possible to authenticate himself.
+        <p> Therefore unless prover can obtain a secret key and a corresponding public key from a another registered user, it is not possible to 
+            authenticate himself. </p>
 
-    \subsubsection{Impersonation}
+        <h5> Impersonation </h5>
     
-Since protocol accomplish both soundness and completeness, this protocol is secure against impersonation attacks.
+        <p> Since protocol accomplish both soundness and completeness, this protocol is secure against impersonation attacks. </p>
 
-    \subsubsection{Replay Attacks}
+        <h5> Replay Attacks </h5>
     
-A replay attack is when an adversary saves a previously sent message(s) and uses it again to gain an advantage. Let’s assume a scenario where a malicious user (hereafter mentioned as M) is eavesdropping on a communication session. M can save message in step 1 (Msg1) , message in step 3 (Msg3) and/or message in step 5 (Msg5), replay it later in the hope to authenticate himself.
+        <p> A replay attack is when an adversary saves a previously sent message(s) and uses it again to gain an advantage. Let’s assume a scenario where 
+            a malicious user (hereafter mentioned as M) is eavesdropping on a communication session. M can save message in step 1 (Msg1) , message in step 3 
+            (Msg3) and/or message in step 5 (Msg5), replay it later in the hope to authenticate himself. </p>
 
-If Msg1 was replayed this will not gain any advantage for M. Since M does not know any secret key corresponding to the set P, he will not be able to authenticate unless by random guessing X or R in step 3 and step 5. Storing Msg3 will not help since without the knowledge of y, M will not able to generate K. Only possibility of succeeding in a replay attack is if the verifier generate the same R as the original authentication. Then M can replay Msg5 to successfully authenticate himself as a valid prover. 
+        <p> If Msg1 was replayed this will not gain any advantage for M. Since M does not know any secret key corresponding to the set P, he will not be able 
+            to authenticate unless by random guessing X or R in step 3 and step 5. Storing Msg3 will not help since without the knowledge of y, M will not able 
+            to generate K. Only possibility of succeeding in a replay attack is if the verifier generate the same R as the original authentication. Then M can 
+            replay Msg5 to successfully authenticate himself as a valid prover. </p>
 
-\subsection{Zero Knowledge Proof Based Approach}
+        <h4> Zero Knowledge Proof Based Approach </h4>
 
+        <h5> Anonymity </h5>
 
-\subsubsection{Anonymity}
+        <p> The only information the protocol reveals is that the prover has the knowledge of an $a_p$. Protocol hides the $A_p$ (public key) corresponds to 
+            that $a_p$ among the set of P public keys. Identifying the exact public key of the prover is not feasible. Therefore the protocol obtains k anonymity.</p>
 
-The only information the protocol reveals is that the prover has the knowledge of an $a_p$. Protocol hides the $A_p$ (public key) corresponds to that $a_p$ among the set of P public keys. Identifying the exact public key of the prover is not feasible. Therefore the protocol obtains k anonymity.
+        <h5> Completeness </h5>
+   
+        <p> If the prover possesses the correct $a_p$; the secret key corresponding to $A_p$, only then the prover will be able to generate r such that the U 
+            generated by the verifier will be equal to the U received to the verifier at step 1. </p>
 
-    \subsubsection{Completeness}
+        <p> \[U' = g^r A^{v_1}  … A^{v_p} … A^{v_{n-1}}\] </p>
+        <p> \[U' = g^{(s - a_pv_p)} A^{v_1}  … A^{v_p} … A^{v_{n-1}}\] </p>
+        <p> \[U' = g^s g^{- a_pv_p} A^{v_1}  … (g^{a_p})^{v_p} … A^{v_{n-1}}\] </p>
+        <p> \[U' = g^s g^{- a_pv_p} A^{v_1}  …  g^{ a_pv_p} … A^{v_{n-1}}\] </p>
+        <p> \[U' = g^s A^{v_1} … A^{v_{n-1}}\] </p>    
+        <p> \[U' = U\] </p> 
     
+        <h5> Soundness </h5> 
 
-If the prover possesses the correct $a_p$; the secret key corresponding to $A_p$, only then the prover will be able to generate r such that the U generated by the verifier will be equal to the U received to the verifier at step 1. 
+        <p> Let's consider a cheating prover as a prover who does not possess a private key $a_p$ corresponding to a public key $A_p$.</p>
 
-\[U' = g^r A^{v_1}  … A^{v_p} … A^{v_{n-1}}\]
-\[U' = g^{(s - a_pv_p)} A^{v_1}  … A^{v_p} … A^{v_{n-1}}\]
-\[U' = g^s g^{- a_pv_p} A^{v_1}  … (g^{a_p})^{v_p} … A^{v_{n-1}}\]
-\[U' = g^s g^{- a_pv_p} A^{v_1}  …  g^{ a_pv_p} … A^{v_{n-1}}\]
-\[U' = g^s A^{v_1} … A^{v_{n-1}}\]     
-\[U' = U\]  
+        <p> Without a $a_p$ a prover will not be able to generate $r = s - a_pv_p mod p$. </p>
+
+        <p> At step 3, prover is required to generate $v_p$ by xoring elements of V with the challenge c. This operation ensures that xoring elements in 
+            V vector (including $v_p$) at the verifier's side would generate c. Therefore to pass the first step of verification V must be well formed. 
+            Without the knowledge of the valid $a_p$ a prover will not be able to generate r to cancel out the $g_{a_pv_p}$ component at the last step of 
+            the verification. </p>
+
+        <p> The only possibility is random guessing. The probability of guessing $a_p$ without any information is 1/Q. Since Q is selected to be a large 
+            prime number, probability of that happening is statistically insignificant.</p>
+
+        <h5> Impersonation </h5> 
+        
+        As we explained previously a protocol that accomplish soundness and completeness is secure against impersonation attacks. Therefore this protocol 
+        is secure against impersonation.
     
-    \subsubsection{Soundness} 
-
-Let's consider a cheating prover as a prover who does not possess a private key $a_p$ corresponding to a public key $A_p$.
-
-Without a $a_p$ a prover will not be able to generate $r = s - a_pv_p mod p$. 
-
-At step 3, prover is required to generate $v_p$ by xoring elements of V with the challenge c. This operation ensures that xoring elements in V vector (including $v_p$) at the verifier's side would generate c. Therefore to pass the first step of verification V must be well formed. Without the knowledge of the valid $a_p$ a prover will not be able to generate r to cancel out the $g_{a_pv_p}$ component at the last step of the verification.
-
-The only possibility is random guessing. The probability of guessing $a_p$ without any information is 1/Q. Since Q is selected to be a large prime number, probability of that happening is statistically insignificant.
-
-    \subsubsection{Impersonation} 
+        <h5> Replay Attacks </h5> 
     
-As we explained previously a protocol that accomplish soundness and completeness is secure against impersonation attacks. Therefore this protocol is secure against impersonation.
-    
+        <p> Let’s assume a scenario where a malicious user (hereafter mentioned as M) is eavesdropping on a communication session. M can save Msg1 at step 1 
+            and Msg3 at step 3, and replay the messages later in the hope to authenticate himself. </p>
 
-    \subsubsection{Replay Attacks} 
-    
-Let’s assume a scenario where a malicious user (hereafter mentioned as M) is eavesdropping on a communication session. M can save Msg1 at step 1 and Msg3 at step 3, and replay the messages later in the hope to authenticate himself.
+        <p> When M replays Msg1 verifier will respond with a random challenge. Without the knowledge of s, $a_p$,  V and P vectors M will not able to continue 
+            further. Therefore only replaying Msg1 will not be successful. Replaying Msg3 as the response for the challenge will cause the first step of the 
+            verification to fail. Since c is chosen randomly by the verifier, the old $v_p$ will not correspond to the new c. Therefore xoring elements of V 
+            will not be equal to c and verifier will terminate the authentication process. This will only be successful if the same c is chosen at the two 
+            authentication processes. The probability of this happening is 1/Q. As mentioned in previous cases this is statistically insignificant. </p>
 
-When M replays Msg1 verifier will respond with a random challenge. Without the knowledge of s, $a_p$,  V and P vectors M will not able to continue further. Therefore only replaying Msg1 will not be successful. Replaying Msg3 as the response for the challenge will cause the first step of the verification to fail. Since c is chosen randomly by the verifier, the old $v_p$ will not correspond to the new c. Therefore xoring elements of V will not be equal to c and verifier will terminate the authentication process. This will only be successful if the same c is chosen at the two authentication processes. The probability of this happening is 1/Q. As mentioned in previous cases this is statistically insignificant.
-
-Modifying the Msg3 will not gain any advantage to M. As mentioned under soundness proof, without a valid $a_p$ authenticating will be infeasible.
-
-        
-        
-        
-        
-        
-        
-        
-        
+        <p> Modifying the Msg3 will not gain any advantage to M. As mentioned under soundness proof, without a valid $a_p$ authenticating will be infeasible.</p>
+     
 
         <h2 id="conclusion">Conclusion</h2>
 
