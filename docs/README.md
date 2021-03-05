@@ -3,24 +3,22 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-4yp-project-template
+repository-name: e15-4yp-anonymous-authentication
 title:
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Anonymous and Distributed Authentication for Peer to Peer Networks
 
 #### Team
 
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
+- E/15/350, Pasan Tennakoon, [email](mailto:pasan96tennakoon@gmail.com)
+- E/15/180, Supipi Karunathilaka, [email](mailto:supipivirajini@gmail.com)
 
 #### Supervisors
 
-- Name, [email](mailto:name@eng.pdn.ac.lk)
-- Name, [email](mailto:name@eng.pdn.ac.lk)
+- Dr. Janaka Alawathugoda, [email](mailto:alawatugoda@eng.pdn.ac.lk)
 
 #### Table of content
 
