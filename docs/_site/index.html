@@ -366,6 +366,10 @@
              interpolation.</p> 
 
         
+        
+        
+        
+        
          \[ l_i = \frac{x - x_0}{x_i-x_0} \times \frac{x - x_1}{x_i-x_1} \times ... \times \frac{x - x_{t-1}}{x_i-x_{t-1}}\]
 
          \[ f(x) = \sum_{i=0}^{t-1} y_il_i(x)) \]
@@ -380,7 +384,7 @@
 
         <h3> Conceptual design </h3>
 
-        < h4> P2P network design </h4>
+        <h4> P2P network design </h4>
 
         <p> Using the .Net framework we implemented a hybrid P2P network\cite{BeverlyYang2003}. A traditional hybrid peer to peer network 
             consists of peers and super peers. Hybrid P2P systems is a combination of purely distributed P2P systems and mediated P2P systems. 
@@ -392,36 +396,36 @@
             requestors. They are connected to the system through super peers. Every peer is assumed to be behind a NAT environment. Peers with public 
             IP addresses and higher computational power are promoted to be super peers.</p> 
 
-       <p> Super peers have more responsibility for the system. A super peer is connected to one or more other super peers in the network and responsible 
-           for one or more peers. They can communicate among other super peers using the super network. Super peers can join or leave the network at any 
-           time. Dynamic behaviour of super peers should not affect the connectivity of the network. Our design of the network is able to change the 
-           topology according to this dynamic behaviour of peers and maintain connectivity among existing super peers.</p>
+        <p> Super peers have more responsibility for the system. A super peer is connected to one or more other super peers in the network and responsible 
+            for one or more peers. They can communicate among other super peers using the super network. Super peers can join or leave the network at any 
+            time. Dynamic behaviour of super peers should not affect the connectivity of the network. Our design of the network is able to change the 
+            topology according to this dynamic behaviour of peers and maintain connectivity among existing super peers.</p>
 
-       <p> A super peer is only responsible for nodes under his scope and does not know any information regarding other peers of the system.
-           Therefore a node discovery process becomes an exhaustive task. This can be accomplished in two ways; flooding search and random walk. 
-           We utilize flooding search in this project since the random walk is not guaranteed to produce results\cite{Ahmed2011}.</p>
+        <p> A super peer is only responsible for nodes under his scope and does not know any information regarding other peers of the system.
+            Therefore a node discovery process becomes an exhaustive task. This can be accomplished in two ways; flooding search and random walk. 
+            We utilize flooding search in this project since the random walk is not guaranteed to produce results\cite{Ahmed2011}.</p>
 
-       <h4> Distributed Certificate Management </h4>
+        <h4> Distributed Certificate Management </h4>
 
-       <p> The decentralized environment of the P2P network does not allow traditional methods of authentication. It's difficult to maintain a 
-           centralized database of certificates where the availability of peers cannot be predicted. Distributing certificates among super peers is not 
-           a viable solution since super peers are not always available. Therefore all the certificates under this super peer remains not accessible. Also, 
-           malicious super peers might delete certificates from the network. The obvious solution is to keep multiple copies of the certificates. We propose 
-           a different solution by using Shamir's secret sharing algorithm. The idea is to break the certificates into multiple parts and distribute across 
-           the P2P network. When needed, the certificates can be reconstructed from a minimal subset of the parts. A more detailed explanation of the implementation 
-           is given in section 3.3.1 .</p>
+        <p> The decentralized environment of the P2P network does not allow traditional methods of authentication. It's difficult to maintain a 
+            centralized database of certificates where the availability of peers cannot be predicted. Distributing certificates among super peers is not 
+            a viable solution since super peers are not always available. Therefore all the certificates under this super peer remains not accessible. Also, 
+            malicious super peers might delete certificates from the network. The obvious solution is to keep multiple copies of the certificates. We propose 
+            a different solution by using Shamir's secret sharing algorithm. The idea is to break the certificates into multiple parts and distribute across 
+            the P2P network. When needed, the certificates can be reconstructed from a minimal subset of the parts. A more detailed explanation of the implementation 
+            is given in section 3.3.1 .</p>
 
-       <h4> Proposed Authentication Schemes </h4>
+        <h4> Proposed Authentication Schemes </h4>
 
-       <h5> Ring Signature Based approach </h5>
+        <h5> Ring Signature Based approach </h5>
  
-       <p> The characteristics of ring signatures make it an interesting primitive in obtaining anonymous authentication. Ring signatures allows a message 
-           to be signed by a group of public keys. Making it impossible to identify the exact signer. The original ring signature scheme\cite{Rivest} and 
-           most of the proposed ring signatures provide complete anonymity. This is not suitable for authentication. This make it impossible to revoke the 
-           anonymity of malicious peers. Therefore we used the revocable ring signature scheme proposed in \cite{Dennis} to create a simple authentication 
-           protocol that protect users' privacy. This is just a simple suggestion, of a way to obtain anonymous authentication using existing ring signature 
-           schemes. The idea is to challenge prover to generate a ring signature using a random nonce generated by a verifier. If the prover is able to accomplish 
-           this he can successfully authenticate himself.</p> 
+        <p> The characteristics of ring signatures make it an interesting primitive in obtaining anonymous authentication. Ring signatures allows a message 
+            to be signed by a group of public keys. Making it impossible to identify the exact signer. The original ring signature scheme\cite{Rivest} and 
+            most of the proposed ring signatures provide complete anonymity. This is not suitable for authentication. This make it impossible to revoke the 
+            anonymity of malicious peers. Therefore we used the revocable ring signature scheme proposed in \cite{Dennis} to create a simple authentication 
+            protocol that protect users' privacy. This is just a simple suggestion, of a way to obtain anonymous authentication using existing ring signature 
+            schemes. The idea is to challenge prover to generate a ring signature using a random nonce generated by a verifier. If the prover is able to accomplish 
+            this he can successfully authenticate himself.</p> 
 
         <h5> Authenticated key sharing based approach </h5>
  
@@ -431,9 +435,9 @@
             should not be able to authenticate himself. To accomplish that we employ a authenticated key sharing scheme introduced in \cite{Alawatugoda}.</p>
 
 
-<h5>Zero Knowledge Proof Based Approach}
+        <h5> Zero Knowledge Proof Based Approach </h5>
 
- Zkp is a popular approach to obtain anonymous authentication in p2p networks. This technique has been utilized in \cite{LuLi}, \cite{Han2020} and \cite{Tsangs}. Many of these approaches relies on pseudonyms to hide the identity. We propose a new authentication protocol that uses zero knowledge proofs to hide the identity among a group of users. The protocol achieves properties similar to ring signatures. This is an modification of the Schnorr's zero knowledge proof \cite{Soares2013}. The method is similar to the authenticated key sharing based approach in the sense that the challenge is to prove the knowledge of a secret key in a set of public keys. However unlike previous method, we use zero knowledge proofs to do that. Therefore this method achieve k anonymity. 
+        <p> Zkp is a popular approach to obtain anonymous authentication in p2p networks. This technique has been utilized in \cite{LuLi}, \cite{Han2020} and \cite{Tsangs}. Many of these approaches relies on pseudonyms to hide the identity. We propose a new authentication protocol that uses zero knowledge proofs to hide the identity among a group of users. The protocol achieves properties similar to ring signatures. This is an modification of the Schnorr's zero knowledge proof \cite{Soares2013}. The method is similar to the authenticated key sharing based approach in the sense that the challenge is to prove the knowledge of a secret key in a set of public keys. However unlike previous method, we use zero knowledge proofs to do that. Therefore this method achieve k anonymity. 
 
 
 \section{Methodological approach}
