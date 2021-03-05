@@ -1,33 +1,24 @@
 {
   "visibility": false,
-  "title": "This is the title of the project",
+  "title": "Anonymous and Distributed Authentication for Peer to Peer Networks",
   "team": [
     {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
+      "name": "Pasan Tennakoon",
+      "email": "pasan96tennakoon@gmail.com",
+      "eNumber": "E/15/350"
     },
     {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
+      "name": "Supipi Karunathilaka",
+      "email": "supipivirajini@gmail.com",
+      "eNumber": "E/15/180"
     }
   ],
   "supervisors": [
     {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
+      "name": "Dr. Janaka Alwathugoda",
+      "email": "alawatugoda@eng.pdn.ac.lk"
     }
   ],
-  "description": "This is a breif intruduction of the project. You need to use plain text without any specific characters here",
-  "tags": ["Web", "Embedded Systems"]
+  "description": "We propose three authentication protocols that allow a user to anonymously authenticate in a P2P environment.",
+  "tags": ["Authentiction", "Zero Knowledge Proofs", "Anonymity", "Peer to Peer", "Ring Signatures", "Shamir's Secret Sharing"]
 }

@@ -1,59 +1,27 @@
 {
-   "title":"This is the title of the project",
+   "title":"Anonymous and Distributed Authentication for Peer to Peer Networks",
    "team":[
       {
-         "name":"Team Member Name 1",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx",
-         "github_profile":"#",
-         "linkedin_profile":"#",
-         "researchgate_profile":"#"
+         "name":"Pasan Tennakoon",
+         "email":"pasan96tennakoon@gmail.com",
+         "eNumber":"E/15/350",
+         "github_profile":"PasanT9"
       },
       {
-         "name":"Team Member Name 2",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx",
-         "github_profile":"#",
-         "linkedin_profile":"#",
-         "researchgate_profile":"#"
-      },
-      {
-         "name":"Team Member Name 3",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx",
-         "github_profile":"#",
-         "linkedin_profile":"#",
-         "researchgate_profile":"#"
+         "name":"Supipi Virajini",
+         "email":"supipivirajini@gmail.com",
+         "eNumber":"E/15/180",
+         "github_profile":"Supipi96"
       }
    ],
    "supervisors":[
       {
-         "name":"Dr. Supervisor 1",
-         "email":"email@eng.pdn.ac.lk",
+         "name":"Dr. Janaka Alawathugoda",
+         "email":"alawatugoda@eng.pdn.ac.lk",
          "linkedin_profile":"",
-         "researchgate_profile":""
-      },
-      {
-         "name":"Dr. Supervisor 2",
-         "email":"email@eng.pdn.ac.lk",
-         "linkedin_profile":"",
-         "researchgate_profile":""
+         "researchgate_profile":"https://www.researchgate.net/profile/Janaka-Alawatugoda-2"
       }
-   ],
-   "publications":[
-      {
-         "title":"Paper Title",
-         "journal":"Journal or Conference Name",
-         "description":"Sample Description",
-         "url":"#"
-      }
-   ],
-   "media":[
-      {
-         "type":"youtube",
-         "url":"#"
-      }
-   ],
+   ]
    "tags":[
       "Final Year Projects"
    ]
